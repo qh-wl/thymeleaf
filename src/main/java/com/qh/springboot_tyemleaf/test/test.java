@@ -15,6 +15,7 @@ public class test {
     @Resource
     StuMapper stuMapper;
 
+    //
     @Test
     public void test(){
         List<Stu> stus = stuMapper.selectAll();
