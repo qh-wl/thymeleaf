@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center" align="center">
+    <form action="/stu/update" method="post">
+        id :<input type="text" name="stu_id" th:value="${stumodel.stuInfo.stu_id}">
+        名字: <input type="text" name="stu_name" th:value="${stumodel.stuInfo.stu_name}">
+        <input type="submit" value="修改">
+    </form>
+</div>
+</body>
+</html>

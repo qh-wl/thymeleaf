@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center" align="center">
+    <form action="/stu/add" method="post">
+        名字: <input type="text" name="stu_name">
+        <input type="submit" value="添加">
+    </form>
+</div>
+
+<table border="1" align="center" style="text-align: center" width="200px" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr >
+        <td>ID</td>
+        <td>名字</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${stumodel.stuList.size()} eq 0">
+        <td colspan="3">没有用户信息!</td>
+    </tr>
+    <tr th:each="stu : ${stumodel.stuList}">
+        <td th:text="${stu.stu_id}"></td>
+        <td th:text="${stu.stu_name}"></td>
+        <td>
+            <a th:href="@{'/stu/findById/?stuId='+${stu.stu_id}}">修改</a>
+            <a th:href="@{'/stu/delete/?stuId='+${stu.stu_id}}">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!--<span>[[${stumodel.stuList}]]</span>-->
+
+
+</body>
+</html>
